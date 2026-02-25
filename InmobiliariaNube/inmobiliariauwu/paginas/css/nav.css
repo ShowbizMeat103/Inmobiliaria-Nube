@@ -1,0 +1,68 @@
+/* Barra de navegación principal */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #2b1b12;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: #ddc7bb;
+  transform: translateY(-2px);
+}
+
+.nav-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  background-color: transparent;
+  color: #2b1b12;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #ddc7bb;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.publicar-btn {
+  background-color: #2b1b12;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}

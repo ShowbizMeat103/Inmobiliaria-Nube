@@ -1,0 +1,40 @@
+select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  font-size: 1rem;
+  color: var(--color-text);
+  box-sizing: border-box;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* Flecha personalizada */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%233c2317" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px; /* Espacio para la flecha */
+}
+
+select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(60,35,23,0.1);
+}
+
+/* Opción por defecto desactivada */
+select option[disabled] {
+  color: #999;
+}
+
+/* Estilo para opciones personalizadas */
+select option {
+  background-color: white;
+  color: var(--color-text);
+  padding: 12px;
+}
+ 

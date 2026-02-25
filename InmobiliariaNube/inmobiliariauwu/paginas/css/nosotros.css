@@ -1,0 +1,248 @@
+/* Estilo inspirado en landing_page.css y base del sitio */
+
+/* Fondo cremita y tipografía */
+body {
+  background: #fef7f2;
+  color: #2b1b12;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sección hero */
+.about-hero {
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(43, 27, 18, 0.10);
+  max-width: 900px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: #2b1b12;
+}
+
+.about-hero p {
+  font-size: 1.15rem;
+  color: #4f3527;
+}
+
+/* Misión y visión */
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2.5rem auto;
+  max-width: 900px;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(43, 27, 18, 0.08);
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  max-width: 350px;
+  flex: 1 1 220px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.value-card i {
+  font-size: 2.2rem;
+  color: #ddc7bb;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  color: #2b1b12;
+  margin-bottom: 0.7rem;
+}
+
+.value-card p {
+  color: #4f3527;
+}
+
+/* Valores */
+.about-core-values {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(43, 27, 18, 0.10);
+  max-width: 1100px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem;
+}
+
+.about-core-values h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #2b1b12;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.about-core-values h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #ddc7bb;
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+.about-core-values .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-core-values .card {
+  background: #fef7f2;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(43, 27, 18, 0.07);
+  padding: 1.7rem 1.2rem;
+  min-width: 180px;
+  max-width: 260px;
+  flex: 1 1 180px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.about-core-values .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(43, 27, 18, 0.13);
+}
+
+.about-core-values .card i {
+  font-size: 2rem;
+  color: #ddc7bb;
+  margin-bottom: 0.7rem;
+}
+
+.about-core-values .card h4 {
+  color: #2b1b12;
+  margin-bottom: 0.5rem;
+}
+
+.about-core-values .card p {
+  color: #4f3527;
+  font-size: 1rem;
+}
+
+/* Equipo */
+.about-team {
+  max-width: 1100px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(43, 27, 18, 0.10);
+}
+
+.about-team h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #2b1b12;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.about-team h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 0.7rem auto 0;
+  border-radius: 2px;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team-cards .card {
+  background: #fef7f2;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(43, 27, 18, 0.07);
+  padding: 1.7rem 1.2rem;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 1 1 180px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.team-cards .card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(43, 27, 18, 0.13);
+}
+
+.team-cards .card h3 {
+  color: #2b1b12;
+  margin-bottom: 0.5rem;
+}
+
+.team-cards .card p {
+  color: #4f3527;
+  font-size: 1rem;
+}
+
+/* Frase final */
+.about-closing {
+  border-radius: 18px;
+  max-width: 900px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: #2b1b12;
+  box-shadow: 0 4px 16px rgba(43, 27, 18, 0.08);
+}
+
+.about-closing h2 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #2b1b12;
+}
+
+/* Footer */
+.footer {
+  background: #2b1b12;
+  color: #fff;
+  padding: 3rem 2rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+.footer .copy p {
+  margin: 0;
+  color: #ccc;
+  font-size: 0.95em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-values,
+  .about-core-values .cards,
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-hero,
+  .about-core-values,
+  .about-team,
+  .about-closing {
+    padding: 1.5rem 0.7rem;
+  }
+}

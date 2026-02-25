@@ -1,0 +1,306 @@
+/* Contenedores */
+.detalle-inmueble {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.tarjeta-detalle,
+.formulario-inmueble {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 2.5rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.tarjeta-detalle {
+  max-width: 700px;
+  padding: 30px;
+}
+
+/* Línea superior */
+.formulario-inmueble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: linear-gradient(90deg, #d8b48c, #3c2317);
+  animation: barExpand 1s ease-out;
+}
+
+/* Títulos */
+.titulo-inmueble,
+.formulario-inmueble h1 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #2c2c2c;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.titulo-inmueble {
+  font-size: 2.2em;
+  letter-spacing: -0.02em;
+}
+
+.formulario-inmueble h1 {
+  font-size: 2rem;
+  color: #3c2317;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b6b6b;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* Descripción */
+.descripcion {
+  margin-top: 25px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Grid de campos */
+.formulario-inmueble .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid.single-column {
+  grid-template-columns: 1fr;
+}
+
+/* Campos de formulario */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid #c7b098;
+  border-radius: 10px;
+  background: #fcfafa;
+  color: #3a3a3a;
+  font-size: 1.05rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #a08466;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3c2317;
+  box-shadow: 0 0 0 5px rgba(60, 35, 23, 0.2);
+  outline: none;
+  transform: scale(1.005);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Ícono en e-mail */
+.form-group.email input {
+  padding-right: 3.5rem;
+  background: url("../img/email-icon.svg") no-repeat right 1.2rem center #fcfafa;
+  background-size: 1.3rem;
+}
+
+/* Símbolo $ en precio */
+input#precio {
+  padding-left: 3rem;
+  background: #fcfafa
+    url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ctext x='0' y='16' font-size='16' fill='%235a5a5a'>$%3c/text%3e%3c/svg%3e")
+    no-repeat left 1.1rem center;
+  background-size: 1.1rem;
+}
+
+/* Botones */
+.boton-detalle,
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  background: #3c2317;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.boton-detalle:hover,
+.btn-primary:hover {
+  background: #2a170f;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Empuja un poco hacia abajo el botón “Publicar” */
+.formulario-inmueble form button.boton-detalle {
+  margin-top: 2.5rem;
+}
+
+/* Estilos para el input de archivo personalizado */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Styles for the custom file input button (label.boton-archivo) */
+.inputfile + label.boton-archivo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #6b4f3a;
+  border: none;
+  display: inline-block; /* Allows it to size to content but be on its own line if needed */
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  /* margin-top: 0.5rem; /* Original: Spacing handled by wrapper now */
+  /* Remove auto margins if they were previously used for centering this button directly */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+
+/* Hover and Focus states for the button */
+.inputfile + label.boton-archivo:hover,
+.inputfile:focus + label.boton-archivo {
+  background-color: #503a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific focus style for the button to avoid large outlines */
+.inputfile:focus + label.boton-archivo {
+  /* Use box-shadow for a focus ring that respects element boundaries */
+  box-shadow: 0 0 0 3px rgba(60, 35, 23, 0.4), 0 8px 20px rgba(0, 0, 0, 0.1); /* Focus ring + existing hover shadow */
+  outline: none; /* Remove default browser outline which might cause overflow */
+}
+
+/* Wrapper for the file input button and the file name display */
+.inputfile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button and the file name text */
+  margin-top: 0.5rem; /* Space between "Imagen del inmueble:" label and this group */
+  margin-bottom: 1rem; /* Space after this group */
+}
+
+/* Styling for the file name display span */
+.file-name-display {
+  display: block; /* Takes its own line */
+  margin-top: 0.75rem; /* Space between the button and the file name */
+  font-size: 0.9em;
+  color: #555;
+  min-height: 1.2em; /* Prevents layout shift when text appears/disappears */
+  text-align: center; /* Ensures the file name text is centered */
+  word-break: break-all; /* Prevents long file names from breaking the layout */
+}
+
+/* Review and adjust existing rules for label[for="imagen"] if necessary.
+   The text label "Imagen del inmueble:" should be styled separately.
+   For example, ensure it's full width and text-aligned left as intended. */
+
+.formulario-inmueble label[for="imagen"]:not(.boton-archivo) {
+  /* Targets the text label "Imagen del inmueble:" */
+  display: block;
+  margin-bottom: 0.25rem; /* Adjust space before the inputfile-wrapper */
+  width: 100%;
+  text-align: left;
+}
+
+/* You might need to remove or adjust parts of older, more general rules
+   that styled '.inputfile + label' or 'label[for="imagen"]' broadly,
+   especially if they set 'display: block' and 'margin: auto' for the button,
+   as the new '.inputfile-wrapper' now handles its centering.
+   The styles above for '.inputfile + label.boton-archivo' are more specific
+   and should take precedence if placed correctly in your CSS file. */
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formulario-inmueble .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .boton-detalle,
+  .btn-primary {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.9rem 2rem;
+  }
+  .detalle-inmueble {
+    padding: 20px 15px;
+  }
+  .tarjeta-detalle,
+  .formulario-inmueble {
+    margin: 2rem auto;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+}
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes barExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Flecha en select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 3rem; /* Más espacio para la flecha */
+  background-repeat: no-repeat;
+  background-position: right 1.1rem center; /* Posición ajustada */
+  background-size: 1.3rem; /* Flecha ligeramente más grande */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e"); /* Color de flecha ajustado */
+}

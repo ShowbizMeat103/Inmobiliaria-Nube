@@ -1,0 +1,381 @@
+/* Estilos específicos para la página de inicio */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef7f2;
+  color: #2b1b12;
+  line-height: 1.6;
+}
+
+/* Secciones */
+section {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+}
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 50%;
+  width: 40px;
+  height: 3px;
+  background: #ddc7bb;
+  transform: translateX(-50%);
+}
+.logo {
+  width: 100px;
+  height: auto;
+}
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .hero { flex-direction: row; }
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+.hero-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Buscador de propiedades */
+.buscador {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 850px;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(43, 27, 18, 0.15);
+    padding: 2rem;
+    transform: translateY(-50px);
+    position: relative;
+    z-index: 2;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-filter {
+    flex: 1;
+    min-width: 150px;
+}
+
+.search-filter label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4f3527;
+}
+
+.search-filter select,
+.search-input input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddc7bb;
+  border-radius: 8px;
+}
+search-filter select:focus, .search-input:focus {
+    border-color: #2b1b12;
+}
+
+.search-input {
+    flex: 3;
+    min-width: 300px;
+}
+
+.search-btn {
+    background: #2b1b12;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.search-btn:hover {
+    background: #4f3527;
+    transform: translateY(-3px);
+}
+
+
+/* Estructura flex común */
+.info-cards,
+.recomendations-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* Cartas (info y recomendaciones) */
+.info-cards .card,
+.recomendations-cards .card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(43, 27, 18, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 350px;
+}
+.info-cards .card {
+  padding: 2.5rem 2rem;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: center;
+}
+.info-cards .card:hover,
+.recomendations-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(43, 27, 18, 0.15);
+}
+
+/* Línea lateral en info-cards */
+.info-cards .card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background: #ddc7bb;
+  transition: width 0.3s;
+}
+.info-cards .card:hover::before {
+  width: 8px;
+}
+
+/* Títulos y párrafos */
+.card h3 {
+  margin: 0 1.5rem 1rem;
+  font-size: 1.3rem;
+  color: #2b1b12;
+}
+.card p {
+  margin: 0 1.5rem 1rem;
+  color: #4f3527;
+}
+
+/* Iconos en info-cards */
+.info-cards .icon {
+  display: block;
+  font-size: 2.5rem;
+  color: #ddc7bb;
+  margin-bottom: 1.5rem;
+}
+
+/* Imagen y etiqueta en recomendaciones */
+.recomendations-cards .img {
+  position: relative;
+  height: 200px;
+}
+.recomendations-cards img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.recomendations-cards .card:hover img {
+  transform: scale(1.1);
+}
+.recomendations-cards span {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: #2b1b12;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Meta y precio */
+.recomendations-cards .meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  padding: 1rem 1.5rem 0;
+  color: #2b1b12;
+  font-weight: 500;
+}
+.recomendations-cards .price {
+  margin: 0 1.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2b1b12;
+}
+
+/* Botón general */
+.btn,
+.view-more {
+  display: inline-block;
+  margin: 3rem auto 0;
+  padding: 0.8rem 2rem;
+  border: 2px solid #ddc7bb;
+  border-radius: 30px;
+  color: #2b1b12;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn:hover,
+.view-more:hover {
+  background: #ddc7bb;
+  transform: translateY(-3px);
+}
+
+/* Sección contacto */
+.contact-us {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(43, 27, 18, 0.15);
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 3rem 2.5rem;
+  position: relative;
+  text-align: center;
+}
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 10px;
+  background: linear-gradient(to right, #ddc7bb, #2b1b12);
+}
+.contact-us form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+.contact-us input,
+.contact-us textarea {
+  flex: 1 1 300px;
+  border: 1px solid #ddc7bb;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+  transition: border 0.3s;
+}
+.contact-us input:focus,
+.contact-us textarea:focus {
+  border-color: #2b1b12;
+}
+.contact-us button {
+  background: #2b1b12;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 1.5rem;
+  transition: background 0.3s, transform 0.3s;
+}
+.contact-us button:hover {
+  background: #4f3527;
+  transform: translateY(-3px);
+}
+
+/* Pie de página */
+.footer {
+  background: #2b1b12;
+  color: #fff;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+.footer .main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer img {
+  width: 150px;
+  margin-bottom: 1.5rem;
+}
+.footer h3 {
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.footer h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 40px; height: 3px;
+  background: #ddc7bb;
+}
+.footer a,
+.footer p {
+  color: #ddc7bb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #fff;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  margin-right: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.3s;
+}
+.social a:hover {
+  background: #ddc7bb;
+  color: #2b1b12;
+  transform: translateY(-3px);
+}
+.footer .copy {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive para móviles */
+@media (max-width: 900px) {
+  .info-cards,
+  .recommendation-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

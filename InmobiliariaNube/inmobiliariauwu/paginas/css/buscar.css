@@ -1,0 +1,129 @@
+/* Styles for the search bar on buscar.php, mimicking landing_page.css search bar */
+
+body {
+  background-color: #fef7f2; /* Consistent background */
+}
+
+.buscador {
+  margin: 20px auto 30px auto; /* Adjusted margin for buscar.php (no translateY) */
+  width: 90%;
+  max-width: 1000px; /* Increased max-width to accommodate more filters in a row */
+  background-color: #fff; /* Match landing_page.css */
+  border-radius: 18px; /* Match landing_page.css */
+  box-shadow: 0 10px 30px rgba(43, 27, 18, 0.15); /* Match landing_page.css */
+  padding: 2rem; /* Match landing_page.css */
+  position: relative; /* Keep for potential future absolute positioned elements inside */
+  z-index: 1; /* Default z-index */
+}
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Match landing_page.css */
+  margin-bottom: 1.5rem; /* Added more margin before buttons */
+}
+
+.search-filter,
+.search-input.full-width-keyword {
+  /* Targeting the keyword input container */
+  flex: 1 1 200px; /* Allow filters to take space, adjust min-width as needed */
+  min-width: 180px; /* Minimum width for filter elements */
+}
+
+/* New styles for the wrapper of price filters */
+.price-filters-wrapper {
+  flex: 2 1 400px; /* This wrapper will act as a flex item, aiming for a basis of 400px */
+  display: flex; /* It's also a flex container for the min/max price inputs */
+  gap: 1rem; /* Space between min and max price inputs */
+  min-width: 370px; /* Roughly (180px * 2 + 1rem), ensures it tries to keep its children side-by-side */
+}
+
+/* Adjust flex properties for search-filter elements specifically inside the price-filters-wrapper */
+.price-filters-wrapper > .search-filter {
+  flex: 1; /* Each price filter (min, max) takes an equal share of the wrapper's width */
+  min-width: 0; /* Override the default min-width: 180px to allow them to shrink and fit */
+  /* If a minimum width is still desired for individual price inputs, set it here e.g., 150px */
+}
+
+.search-input.full-width-keyword {
+  flex-basis: 100%; /* Make keyword search take full width on a new line if needed */
+}
+
+.search-filter label,
+.search-input.full-width-keyword label {
+  display: block;
+  margin-bottom: 0.5rem; /* Match landing_page.css */
+  font-weight: 500; /* Match landing_page.css */
+  color: #4f3527; /* Match landing_page.css */
+}
+
+.search-filter select,
+.search-filter input[type="number"],
+.search-input.full-width-keyword input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem; /* Slightly more padding for better touch targets */
+  border: 1px solid #ddc7bb; /* Match landing_page.css */
+  border-radius: 8px; /* Match landing_page.css */
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Added Poppins font */
+}
+
+.search-filter select:focus,
+.search-filter input[type="number"]:focus,
+.search-input.full-width-keyword input[type="text"]:focus {
+  border-color: #2b1b12; /* Match landing_page.css */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(43, 27, 18, 0.2);
+}
+
+.buscador form {
+  /* To align buttons at the end */
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap if not enough space */
+  gap: 1rem; /* This will now apply between .search-filters and .form-actions */
+  align-items: center; /* Vertically align items if they wrap */
+}
+
+/* New styles for the button container */
+.form-actions {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 1rem; /* Space between buttons if both are present */
+  width: 100%; /* Ensure the wrapper takes full width, pushing it to a new line if necessary */
+  margin-top: 0.5rem; /* Optional: adjust top margin for spacing from filters */
+}
+
+.search-btn {
+  /* General button style from landing_page.css */
+  background: #2b1b12;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  /* margin-top: 1rem; /* Removed, form flex gap will handle spacing */
+  /* width: 100%; /* Removed, let it size by content or flex */
+  text-decoration: none; /* For anchor styled as button */
+  display: inline-block; /* For anchor */
+  text-align: center;
+}
+
+.search-btn:hover {
+  background: #4f3527;
+  transform: translateY(-2px); /* Softer hover effect */
+}
+
+.search-btn.secondary,
+a.limpiar-busqueda.search-btn.secondary {
+  /* Style for the clear button */
+  background-color: #6c757d; /* Bootstrap secondary-like color */
+  color: white;
+}
+.search-btn.secondary:hover,
+a.limpiar-busqueda.search-btn.secondary:hover {
+  background-color: #5a6268;
+}

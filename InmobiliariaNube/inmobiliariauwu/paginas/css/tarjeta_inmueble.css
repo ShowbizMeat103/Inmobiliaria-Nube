@@ -1,0 +1,182 @@
+/* Styles for Property Cards */
+
+/* You may remove or comment out all .tarjeta-inmueble styles if not used anymore */
+
+/* .tarjeta-inmueble {
+  background: #fff;
+  border: 1px solid rgba(221, 199, 187, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(43, 27, 18, 0.07);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.tarjeta-inmueble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #2b1b12, #ddc7bb);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+.tarjeta-inmueble:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(43, 27, 18, 0.18),
+    0 5px 15px rgba(43, 27, 18, 0.08);
+}
+.tarjeta-inmueble:hover::before {
+  transform: scaleX(1);
+}
+.tarjeta-inmueble:active {
+  transform: translateY(-4px) scale(0.99);
+  box-shadow: 0 8px 20px rgba(43, 27, 18, 0.07);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Título */
+.tarjeta-inmueble h2 {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #2b1b12;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  transition: color 0.2s;
+}
+.tarjeta-inmueble:hover h2 {
+  color: #4f3527;
+}
+
+/* Precio */
+.tarjeta-inmueble .precio {
+  /* Added .tarjeta-inmueble to scope */
+  position: relative;
+  color: #059669;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+.tarjeta-inmueble .precio::after {
+  /* Added .tarjeta-inmueble to scope */
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: #059669;
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.tarjeta-inmueble:hover .precio::after {
+  transform: scaleX(1.3);
+}
+.tarjeta-inmueble:active .precio::after {
+  transform: scaleX(0.8);
+}
+
+/* Tipo, Ubicación & Descripción */
+.tarjeta-inmueble .tipo-estado {
+  font-style: italic;
+  color: #6b7280;
+} /* Added .tarjeta-inmueble to scope */
+.tarjeta-inmueble .ubicacion {
+  /* Added .tarjeta-inmueble to scope */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4b5563;
+  transition: color 0.3s;
+}
+.tarjeta-inmueble .ubicacion::before {
+  /* Added .tarjeta-inmueble to scope */
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ddc7bb;
+  transition: transform 0.3s, color 0.3s;
+}
+.tarjeta-inmueble:hover .ubicacion {
+  color: #333;
+}
+.tarjeta-inmueble:hover .ubicacion::before {
+  transform: translateX(3px);
+  color: #2b1b12;
+}
+.tarjeta-inmueble .descripcion {
+  /* Added .tarjeta-inmueble to scope */
+  flex-grow: 1;
+  color: #4b5563;
+  font-size: 1em;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Botón */
+.tarjeta-inmueble .boton-detalle {
+  /* Added .tarjeta-inmueble to scope */
+  align-self: flex-start;
+  padding: 0.8rem 1.2rem;
+  background: #2b1b12;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  box-shadow: 0 6px 15px rgba(43, 27, 18, 0.18);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+.tarjeta-inmueble .boton-detalle::before {
+  /* Added .tarjeta-inmueble to scope */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1; /* Ensure this doesn't conflict if .tarjeta-inmueble itself has z-index logic */
+}
+.tarjeta-inmueble .boton-detalle:hover {
+  /* Added .tarjeta-inmueble to scope */
+  background: #3d291e;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(43, 27, 18, 0.25);
+}
+.tarjeta-inmueble .boton-detalle:hover::before {
+  left: 100%;
+} /* Added .tarjeta-inmueble to scope */
+.tarjeta-inmueble .boton-detalle:active {
+  /* Added .tarjeta-inmueble to scope */
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(43, 27, 18, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+} */
